@@ -8,5 +8,25 @@
 
 <ion-content [fullscreen]="true">
 
+  <ion-list-header>
+    <ion-title class="mainHeader">Bienvenue aux classe des {{className}}</ion-title>
+  </ion-list-header>
 
+  <ion-list *ngIf="articles">
+
+    <ion-card *ngFor="let article of articles.articles">
+
+      <div class="imagesContainer" *ngIf="article.photos && article.photos.length > 0 ">
+        <img class="imageThumnails" alt="Silhouette of mountains" *ngFor=" let photo of article.photos" src="http://www.sebastien-thon.fr/prince/images/{{photo.image}}" />
+      </div>
+
+      <ion-card-header>
+        <ion-card-title>{{article.titre}}</ion-card-title>
+        <ion-card-subtitle>{{article.categorie}}</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-subtitle class="discriptionText">{{article.texte}}</ion-card-subtitle>
+      <ion-button fill="clear" (click)="showDetails(article.id)">voir les détails</ion-button>
+    </ion-card>
+  </ion-list>
 </ion-content>

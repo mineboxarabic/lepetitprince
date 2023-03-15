@@ -25,3 +25,30 @@
 #container a {
   text-decoration: none;
 }
+
+.imagesContainer{
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  .imageThumnails{
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+  }
+}
+.discriptionText{
+  font-size: 16px;
+  line-height: 22px;
+  color: #8c8c8c;
+  margin: 20px;
+}
+
+.mainHeader{
+  font-size: 20px;
+  font-weight: 1200 !important;
+  color: #000000;
+
+}

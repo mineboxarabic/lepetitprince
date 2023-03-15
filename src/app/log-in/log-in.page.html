@@ -19,8 +19,10 @@
       </ion-item>
     </ion-list>
     <ion-button expand="block" (click)="logIn()">Log in</ion-button>
-
-    <ion-button expand="block" fill="outline">Sign up</ion-button>
+    <ion-item>
+      <ion-checkbox slot="start" [(ngModel)]="rememberMe"></ion-checkbox>
+      <ion-label>Remember Me</ion-label>
+    </ion-item>
 
   </ion-content>
 </ion-content>
