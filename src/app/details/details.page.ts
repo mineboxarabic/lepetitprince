@@ -41,5 +41,8 @@ export class DetailsPage implements OnInit {
       
     });
   }
-
+  async handleRefresh() {
+    this.getData();
+  }
 }
+
