@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Preferences } from '@capacitor/preferences';
+import { NavController  } from '@ionic/angular';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -9,7 +10,7 @@ import { Preferences } from '@capacitor/preferences';
 export class HomePage {
   public articles: any;
   public className: any;
-  constructor( private http: HttpClient) {
+  constructor( private http: HttpClient , private navCtrl: NavController) {
     this.className = 'les petites';
 
     this.getData();
@@ -37,7 +38,8 @@ export class HomePage {
   }
 
   showDetails(id: any){
-    console.log(id);
+    //navigate to details page
+    this.navCtrl.navigateRoot(`/details`, {queryParams: {id: id-1}});
   }
 
 }

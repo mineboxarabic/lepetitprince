@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{Title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  *ngIf="articles">
+  <div  *ngIf="articles">
+    <h1 collapse="condense">
+      {{Title}}
+    </h1>
+    <div *ngIf="Images && Images.length > 0 ">
+      <img class="imageThumnails" alt="Silhouette of mountains" *ngFor=" let photo of Images" src="http://www.sebastien-thon.fr/prince/images/{{photo.image}}" />
+    </div>
+    <div class="CategoryName">
+      <p>Category: {{theOpenedArticle.categorie}}</p>
+    </div>
+    <div class="Date">
+      <p>Date: {{date}}</p>
+    </div>
+    <ion-text *ngIf="theOpenedArticle.texte">
+      {{theOpenedArticle.texte}}
+    </ion-text>
+
+  </div>
+</ion-content>
